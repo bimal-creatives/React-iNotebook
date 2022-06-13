@@ -1,7 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
+    useEffect(()=>{
+        const token = localStorage.getItem('token')
+        if(token) {
+            navigate('../', { replace: true})
+        }
+    }, [])
+
 
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     let navigate = useNavigate();

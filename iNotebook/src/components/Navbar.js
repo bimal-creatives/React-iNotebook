@@ -1,10 +1,11 @@
 
 import React from 'react'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
     let location = useLocation();
+    const navigate = useNavigate();
     // useEffect(() => {
     //     console.log(location.pathname);
     //   }, [location]);
@@ -31,6 +32,7 @@ const Navbar = () => {
                         
                     <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                     <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
+                    <Link className="btn btn-primary mx-1" to="/logout" role="button">Logout</Link>
                     </form>
                 </div>
             </div>
